@@ -1,1 +1,56 @@
-# langchain-action
+## langchain-action
+25年10月，LangChain 团队正式发布了 LangChain 1.0 与 LangGraph 1.0。langchain1.0 几乎重构了所有的核心代码，算是首个稳定版本。langchain-action 整理并重构了23年的学习资料。
+
+
+## 前置要求
+
+- Python 3.10或更高版本
+- OPENAI API密钥（用于openai访问）
+- Google API密钥（用于Gemini访问）
+
+
+## 目录层级
+
+1. **ducument**
+   ```
+   简单的rag入门。
+   通过文档加载并使用Qdrant向量数据库进行存储构建问答检索。
+   ```
+
+2. **模版**
+   ```
+   关于模版的基本使用。
+   思维链和少样本
+   模版输出解析等
+   ```
+
+3. **链**
+   ```
+   旧版本langchain使用顺序链和路由链编码，后被移除，统一用更加灵活的模版构建链。
+   例如路由chain就是构建路由提示模版来选择chain
+   ```
+4. **agent**
+   ```
+   分别用langchain和langgraph实践广泛应用的reAct框架。
+    reAct 框架思想就是Question->Thought->Action->Observation 的重复过程
+    不过现代编程框架已集成reAct框架，不需要手动实现。
+   ```
+
+5. **sql**
+   ```
+   rag 基本使用场景，t2sql的实践
+   通过捕获sql语句可提高调试准确度
+   ```
+
+6. **聊天机器人**
+   ```
+    聊天机器人通过加载文档进一步提高了问答质量。
+    相比传统检索问答，增加了对话历史管理。
+   ```
+
+7. **货币转换**
+   ```
+   货币转换agent 理解用户输入中的货币转换需求，调用汇率 API 获取最新数据，最后给出自然语言的回应。
+   用langgraph集合gemini做了意图识别和使用条件边路由不同类型的查询。
+   缺点是货币识别仅用简单的字符串匹配，不够智能。
+   ```
